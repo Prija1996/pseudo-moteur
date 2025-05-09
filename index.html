@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zahao · Accueil</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href='https://unpkg.com/boxicons @2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="avatar">
+      <img src="https://i.pravatar.cc/150 " alt="Photo de profil">
+    </div>
+
+    <nav class="navbar">
+      <a href="https://github.com " target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="#" id="openAboutModal">À propos</a>
+      <button id="toolsButton" aria-label="Ouvrir mes plateformes">
+        <i class='bx bx-customize'></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Contenu principal -->
+<main>
+  <div class="container">
+
+    <!-- Layout global en deux colonnes -->
+    <div class="layout-grid">
+
+      <!-- Colonne de gauche : Recherche + Liens rapides -->
+      <div class="left-column">
+        <!-- Formulaire -->
+        <div class="search-form-wrapper">
+          <form id="searchForm" role="search">
+
+            <div class="input-group">
+              <span>Site:</span>
+              <input type="text" id="site" placeholder="site:" />
+            </div>
+            <div class="input-group">
+              <span>Lien:</span>
+              <input type="text" id="inurl" placeholder="inurl:" />
+            </div>
+            <div class="input-group">
+              <span>Titre:</span>
+              <input type="text" id="intitle" placeholder="intitle:" />
+            </div>
+            <div class="input-group">
+              <span>Texte:</span>
+              <input type="text" id="intext" placeholder="intext:" />
+            </div>
+            <div class="input-group">
+              <span>Fichier:</span>
+              <input type="text" id="filetype" placeholder="filetype:" />
+            </div>
+            <input type="text" id="base" placeholder="Recherche..." autofocus />
+
+            <button type="submit" id="googleSearch">Rechercher sur Google</button>
+          </form>
+        </div>
+
+        <!-- Liens rapides -->
+        <div class="quick-links">
+          <a href="https://github.com " target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://notion.so " target="_blank" rel="noopener noreferrer">Notion</a>
+          <a href="https://mail.google.com " target="_blank" rel="noopener noreferrer">Mail</a>
+          <a href="https://youtube.com " target="_blank" rel="noopener noreferrer">YouTube</a>
+        </div>
+        <!-- Logo'ko -->
+        <div class="logos">
+          <img src="assets/logos.png" alt="ZAHAO Logo" />
+          <h1 class="logo">ZAHAO</h1>
+        </div>
+      </div>
+
+      <!-- Colonne de droite : Commandes Dork -->
+      <div class="right-column">
+        <div class="dorks-sidebar">
+          <h3>Commandes utiles</h3>
+          <ul id="dorkList">
+            <li data-desc="Trouve des résultats sur un site ou domaine spécifique.">site:</li>
+            <li data-desc="Recherche un mot-clé dans l’URL d’une page.">inurl:</li>
+            <li data-desc="Trouve un mot-clé dans le titre d’une page web.">intitle:</li>
+            <li data-desc="Localise des fichiers d’un type particulier (PDF, XLS, etc.).">filetype:</li>
+            <li data-desc="Trouve des pages qui pointent vers une URL spécifique.">link:</li>
+            <li data-desc="Recherche un mot-clé dans le texte d’une page.">intext:</li>
+            <li data-desc="Trouve des pages contenant plusieurs mots dans leur titre.">allintitle:</li>
+            <li data-desc="Affiche la version mise en cache d’une page web.">cache:</li>
+            <li data-desc="Affiche des pages similaires à une URL donnée.">related:</li>
+            <li data-desc="Donne des informations détaillées sur un site.">info:</li>
+            <li data-desc="Cherche des fichiers ayant une extension spécifique.">ext:</li>
+            <li data-desc="Affiche la définition d’un mot ou d’une expression.">define:</li>
+            <li data-desc="Recherche des numéros de téléphone et coordonnées personnelles.">phonebook:</li>
+            <li data-desc="Affiche une carte d’un lieu ou adresse.">map:</li>
+            <li data-desc="Trouve des pages contenant plusieurs mots dans l’URL.">allinurl:</li>
+            <li data-desc="Trouve du contenu indexé avant une date précise.">before:</li>
+            <li data-desc="Trouve du contenu indexé après une date précise.">after:</li>
+            <li data-desc="Recherche des nombres compris dans une plage donnée.">numrange:</li>
+            <li data-desc="Trouve deux termes situés à proximité dans une page.">AROUND(X):</li>
+            <li data-desc="Recherche des mots dans les ancres (liens) d’une page.">inanchor:</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modale : Mes Plateformes -->
+  <div class="modal" id="myModal" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-content" role="document">
+      <span class="close" aria-label="Fermer cette fenêtre">&times;</span>
+      <h2>Mes Plateformes</h2>
+      <div class="modal-grid">
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=1 " alt="FlexyFrog">
+          <a href="https://flexyfrog.com " target="_blank" rel="noopener noreferrer">FlexyFrog</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=2 " alt="CodinGame">
+          <a href="https://codingame.com " target="_blank" rel="noopener noreferrer">CodinGame</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=3 " alt="LeetCode">
+          <a href="https://leetcode.com " target="_blank" rel="noopener noreferrer">LeetCode</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=4 " alt="Exercism">
+          <a href="https://exercism.org " target="_blank" rel="noopener noreferrer">Exercism</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=5 " alt="CodePen">
+          <a href="https://codepen.io " target="_blank" rel="noopener noreferrer">CodePen</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=6 " alt="JSFiddle">
+          <a href="https://jsfiddle.net " target="_blank" rel="noopener noreferrer">JSFiddle</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=7 " alt="FreeCodeCamp">
+          <a href="https://freecodecamp.org " target="_blank" rel="noopener noreferrer">FreeCodeCamp</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=8 " alt="HackerRank">
+          <a href="https://hackerrank.com " target="_blank" rel="noopener noreferrer">HackerRank</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=9 " alt="The Odin Project">
+          <a href="https://theodinproject.com " target="_blank" rel="noopener noreferrer">The Odin Project</a>
+        </div>
+        <div class="modal-card">
+          <img src="https://picsum.photos/60/60?random=10 " alt="Frontend Mentor">
+          <a href="https://frontendmentor.io " target="_blank" rel="noopener noreferrer">Frontend Mentor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modale : À propos -->
+  <div class="modal" id="aboutModal" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-content" role="document">
+      <span class="close-about" aria-label="Fermer cette fenêtre">&times;</span>
+      <h2>À propos</h2>
+      <p>Bienvenue sur ma page perso dédiée aux développeurs.</p>
+      <p>Ce site est né d'une idée simple : avoir une page d’accueil rapide, personnalisable, et adaptée à mes besoins quotidiens.</p>
+      <p>Passionné par le développement web, amateur de design épuré, et en recherche constante d’apprentissage.</p>
+      <p>Merci de me suivre dans cette aventure minimaliste mais efficace.</p>
+    </div>
+  </div>
+
+  <!-- Modale : Description commande -->
+  <div class="modal" id="dorkModal" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-content" role="document">
+      <span class="close-dork" aria-label="Fermer cette fenêtre">&times;</span>
+      <h2>Description</h2>
+      <p id="dorkDescription"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>ZAHAO · Pseudo - Moteur Perso </p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
