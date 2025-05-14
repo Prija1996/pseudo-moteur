@@ -45,9 +45,13 @@ body {
   z-index: 10;
 }
 
+.logos {
+  padding-bottom: 6px;
+}
+
 .logos img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -60,7 +64,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .logos {
     display: none; /
   }
@@ -80,8 +84,8 @@ header {
 }
 
 .avatar img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--primary-color);
@@ -172,7 +176,6 @@ main {
   gap: 1rem;
   backdrop-filter: blur(8px);
 }
-
 
 .quick-links a {
   font-weight: bold;
@@ -478,4 +481,29 @@ button:focus,
 a:focus {
   outline: 2px solid var(--hover-color);
   outline-offset: 2px;
+}
+
+
+#welcomeModal .modal-content {
+  max-width: 500px;
+  padding: 2rem;
+}
+
+#welcomeModal p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+div .close-welcome {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+div .close-welcome:hover {
+  color: white;
 }

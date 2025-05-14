@@ -77,3 +77,28 @@ document.addEventListener("keydown", (e) => {
     if (dorkModal.style.display === "flex") dorkModal.style.display = "none";
   }
 });
+
+// === Affichage du modal de bienvenue une seule fois ===
+document.addEventListener("DOMContentLoaded", function () {
+  const welcomeModal = document.getElementById("welcomeModal");
+  const closeWelcome = document.querySelector(".close-welcome");
+
+  // Vérifie si l'utilisateur a déjà vu le message
+  if (!localStorage.getItem("hasSeenWelcome")) {
+    welcomeModal.style.display = "flex";
+  }
+
+  // Ferme la modale et marque comme vue
+  closeWelcome.addEventListener("click", () => {
+    welcomeModal.style.display = "none";
+    localStorage.setItem("hasSeenWelcome", "true");
+  });
+
+  // Optionnel : fermer en cliquant à l'extérieur
+  welcomeModal.addEventListener("click", (e) => {
+    if (e.target === welcomeModal) {
+      welcomeModal.style.display = "none";
+      localStorage.setItem("hasSeenWelcome", "true");
+    }
+  });
+});
